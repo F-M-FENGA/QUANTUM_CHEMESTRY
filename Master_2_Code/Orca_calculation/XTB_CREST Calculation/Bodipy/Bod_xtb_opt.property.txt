@@ -1,0 +1,15 @@
+*************************************************
+******************* ORCA 6.0.0 ******************
+*************************************************
+$PAL_Flags
+   &GeometryIndex 0
+   &ListStatus       OUT
+   &DISKFLAG [&Type "Integer"] 2
+$End
+$Calculation_Status
+   &GeometryIndex 0
+   &ListStatus       OUT
+   &VERSION [&Type "String"] "6.0.0"
+   &PROGNAME [&Type "String"] "orca"
+   &STATUS [&Type "String"] "NORMAL TERMINATION"
+$End
