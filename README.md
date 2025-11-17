@@ -64,7 +64,6 @@ Usage
   - Check the scripts and notebooks in `SSVQE/` and `QEOM/`.
   - Run training scripts to produce result files (e.g., .npz, .json, .csv) and checkpoints.
 
-```
 ## Author
 
 F. M. FENGA  
