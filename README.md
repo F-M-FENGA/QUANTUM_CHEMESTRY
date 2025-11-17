@@ -1,53 +1,70 @@
-# QUANTUM_CHEMESTRY
+```markdown
+# Quantum Chemistry 
 
-This repository contains notebooks and scripts dedicated to the study and simulation of molecular properties in quantum chemistry, using ab initio methods (Hartree-Fock, DFT, etc.).
+Summary
+-------
+This folder contains the code and notebooks associated with a Master's project in quantum chemistry. It gathers geometry optimizations, ORCA input/output handling, variational quantum algorithms for excited states (SSVQE, QEOM), and scripts/notebooks for generating plots and figures used in the report.
 
-## Repository Contents
+Repository structure
+--------------------
+- Quantum Chemistry.ipynb
+  - Main notebook (exploration, analyses, and figures). Likely contains cells to run experiments, show results, and produce plots.
+- Geometry_optimisation/
+  - Scripts and input/output files for geometry optimization (may include ORCA input files, parsers, and optimized geometries).
+- Orca_calculation/
+  - ORCA input (.inp) and output (.out) files, plus automation and parsing scripts used to run and analyze ORCA calculations (energies, frequencies, orbitals).
+- SSVQE/
+  - Implementation and scripts for SSVQE (subspace-search VQE): state preparation, variational circuits, cost functions, training loops, and result saving.
+- QEOM/
+  - Scripts and tools for QEOM (Quantum Equation-of-Motion): computing excited states from a VQE/SSVQE reference, analyzing excitation matrices, energies, and transitions.
+- Curves and Plots/
+  - Scripts and notebooks to generate all figures for the report: energy curves, convergence plots, densities, and orbital diagrams.
 
-### 1. Quantum Chemistry.ipynb
+Prerequisites
+-------------
+- Platform: Linux / macOS (Windows via WSL is possible).
+- Python 3.8+ (matching the environment used in the project).
+- Recommended environment manager: conda (miniconda/anaconda) or Python venv.
+- Typical Python packages:
+  - numpy, scipy, pandas, matplotlib, seaborn, jupyter, jupyterlab
+  - qiskit or other quantum SDK used in the project (Pennylane)
+  - pyscf (if classical quantum chemistry routines are used)
+  - any ORCA parsing utilities used in the repo
+- ORCA (if you intend to rerun ORCA calculations):
+  - ORCA installed and available on PATH
+  - ORCA license as required
 
-This notebook provides a detailed report on the study of the thiophene molecule using various quantum chemistry methods.
+Installation (example using conda)
+---------------------------------
+1) Create and activate a conda environment:
+   conda create -n qc-env python=3.9 -y
+   conda activate qc-env
 
-- **Author:** F. M. Fenga (Master 2, Atomic, Molecular, and Biophysics Physics, University of Yaoundé I)
-- **Introduction:** Presents thiophene, its chemical properties, and its importance in chemistry, pharmacy, agriculture, and materials science.
-- **Molecular presentation:** Structural analysis, calculation, and 2D/3D visualization of the molecule using RDKit and PySCF.
-- **Physico-chemical calculations:** Molecular weight, logP, TPSA, number of hydrogen bond donors/acceptors, and comparisons with PubChem data.
-- **3D Structure:** Construction of XYZ coordinate files and 3D visualization.
-- **Ab initio calculations:**
-    - Hartree-Fock (SCF)
-    - DFT with various functionals (B3LYP, B3PW91, BLYP, B1B95)
-    - Comparison of energies and discussion on method accuracy.
-- **Packages used:** RDKit, PySCF, pandas, numpy, py3Dmol.
+2) Install Python dependencies (example):
+   pip install numpy scipy pandas matplotlib seaborn jupyterlab qiskit pyscf
 
-### 2. Analyse_CREXTB
+3) Optionally install ORCA and ensure the `orca` executable is in PATH.
 
-> _(Summary to be completed based on the exact file content)_
+Usage
+-----
+- Notebook:
+  - Launch Jupyter and open `Quantum Chemistry.ipynb`:
+    jupyter lab
+  - Execute cells in order or follow the instructions inside the notebook.
 
-This file appears to focus on the analysis of results from simulations or molecular structures, likely involving the extraction or validation of quantum or spectroscopic properties.
+- ORCA calculations:
+  - Place ORCA input files (.inp) in `Orca_calculation/` and run:
+    orca mycalc.inp > mycalc.out
+  - Use parsing scripts in `Orca_calculation/` to extract energies and frequencies.
 
-### 3. Optimization of geometry_241129.ipynb
+- Geometry optimization:
+  - Run optimization scripts in `Geometry_optimisation/`. If ORCA inputs are provided, run them as shown above.
 
-> _(Summary to be completed based on the exact file content)_
+- SSVQE / QEOM:
+  - Check the scripts and notebooks in `SSVQE/` and `QEOM/`.
+  - Run training scripts to produce result files (e.g., .npz, .json, .csv) and checkpoints.
 
-This notebook is intended for the geometric optimization of molecules (likely thiophene or its analogs) using quantum chemistry methods, presenting geometry evolution, convergence criteria, and associated energetic results.
-
----
-
-## Requirements
-
-- Python 3.8+
-- RDKit
-- PySCF
-- pandas, numpy, matplotlib, py3Dmol
-
-## Usage
-
-Open the notebooks in Jupyter Lab or Jupyter Notebook to reproduce calculations and visualizations.
-
-```bash
-pip install rdkit pyscf pandas numpy matplotlib py3Dmol
 ```
-
 ## Author
 
 F. M. FENGA  
